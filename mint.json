@@ -1,29 +1,22 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Plunk",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/plunk-dark.svg",
+    "light": "/logo/plunk-light.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#262626",
+    "light": "#F5F5F5",
+    "dark": "#262626",
+    "background": {
+      "dark": "#090014"
+    },
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#FF7F57",
+      "to": "#9563FF"
     }
-  },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
   },
   "tabs": [
     {
@@ -33,59 +26,106 @@
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
       "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "icon": "discord",
+      "url": "https://useplunk.com/discord"
     }
   ],
   "navigation": [
     {
       "group": "Get Started",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "getting-started/introduction",
+        "getting-started/overview",
+        "getting-started/smtp",
+        "getting-started/self-hosting"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Guides",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "guides/setting-up-automation",
+        "guides/send-a-transactional-email",
+        "guides/double-opt-in"
+      ]
+    },
+    {
+      "group": "Tools",
+        "pages": [
+          "guides/react-email",
+          "guides/jsx-email",
+          "guides/nodemailer"
+        ]
+    },
+    {
+      "group": "Configuration",
+      "pages": [
+        "configuration/domain",
+        "configuration/importing-contacts"
+      ]
+    },
+    {
+      "group": "Working with contacts",
+      "pages": [
+        "working-with-contacts/metadata",
+        "working-with-contacts/segmentation",
+        "working-with-contacts/subscribe-state"
       ]
     },
     {
       "group": "API Documentation",
       "pages": [
-        "api-reference/introduction"
+        "api-reference/base-url",
+        "api-reference/authentication"
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Automations",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "api-reference/actions/track"
+      ]
+    },
+    {
+      "group": "Transactional",
+      "pages": [
+        "api-reference/transactional/send"
+      ]
+    },
+     {
+      "group": "Campaigns",
+        "pages": [
+            "api-reference/campaigns/create",
+            "api-reference/campaigns/send",
+            "api-reference/campaigns/update",
+            "api-reference/campaigns/delete"
+        ]
+    },
+    {
+      "group": "Contacts",
+      "pages": [
+        "api-reference/contacts/id",
+        "api-reference/contacts/get",
+        "api-reference/contacts/count",
+        "api-reference/contacts/create",
+        "api-reference/contacts/subscribe",
+        "api-reference/contacts/unsubscribe",
+        "api-reference/contacts/put",
+        "api-reference/contacts/delete"
       ]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
+    "twitter": "https://twitter.com/useplunk",
+    "github": "https://github.com/useplunk"
+  },
+  "api": {
+    "auth": {
+      "method": "bearer"
+    }
+  },
+  "analytics": {
+    "pirsch": {
+      "id": "3EeqIyq5f0ImhcwOHA7jnHXhozyZmrrL"
+    }
   }
 }
