@@ -1,9 +1,9 @@
 ---
-title: "Authentication"
-description: "How to authenticate requests to the API"
+title: "Xác thực API"
+description: "Cách xác thực các yêu cầu tới API"
 ---
 
-Each request to the API must be authenticated with a valid API token. You can find both your public and secret API key in the [API settings](https://app.useplunk.com/settings/api) of your project.
+Mỗi request tới API phải được xác thực bằng API hợp lệ. Bạn có thể tìm thấy cả khóa API public và API secret của mình trong [API settings](https://app.useplunk.com/settings/api) dự án của bạn.
 
 ```bash
 'Authorization': 'Bearer <team_token>'
@@ -11,24 +11,22 @@ Each request to the API must be authenticated with a valid API token. You can fi
 
 ## Public API Key
 
-Your public API key should be used in environments like the browser or mobile apps.
 
 | Action                       | Allowed |
 |------------------------------|---------|
-| Tracking Events              | ✔️      |
-| Sending transactional emails | ✖       |
-| Retrieving contacts          | ✖       |
-| Creating new contacts        | ✖       |
-| Deleting contacts            | ✖       |
+| Theo dõi sự kiện             | ✔️      |
+| Gửi transactional emails     | ✖       |
+| Truy xuất contacts           | ✖       |
+| Tạo contacts mới             | ✖       |
+| Xóa contacts                 | ✖       |
 
 ## Secret API Key
 
-Your secret API key should be used in environments like your backend server.
 
 | Action                       | Allowed |
 |------------------------------|---------|
-| Tracking Events              | ✔️      |
-| Sending transactional emails | ✔️      |
-| Retrieving contacts          | ✔️      |
-| Creating new contacts        | ✔️      |
-| Deleting contacts            | ✔️      |
+| Theo dõi sự kiện             | ✔️      |
+| Gửi transactional emails     | ✔️      |
+| Truy xuất contacts           | ✔️      |
+| Tạo contacts mới             | ✔️      |
+| Xóa contacts                 | ✔️      |

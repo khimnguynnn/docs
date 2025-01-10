@@ -24,21 +24,13 @@
       "url": "api-reference"
     }
   ],
-  "anchors": [
-    {
-      "name": "Community",
-      "icon": "discord",
-      "url": "https://useplunk.com/discord"
-    }
-  ],
   "navigation": [
     {
       "group": "Get Started",
       "pages": [
         "getting-started/introduction",
         "getting-started/overview",
-        "getting-started/smtp",
-        "getting-started/self-hosting"
+        "getting-started/smtp"
       ]
     },
     {
@@ -52,8 +44,6 @@
     {
       "group": "Tools",
         "pages": [
-          "guides/react-email",
-          "guides/jsx-email",
           "guides/nodemailer"
         ]
     },
@@ -115,8 +105,7 @@
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/useplunk",
-    "github": "https://github.com/useplunk"
+    "website": "https://twitter.com/useplunk"
   },
   "api": {
     "auth": {
