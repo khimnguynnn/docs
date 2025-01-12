@@ -1,6 +1,6 @@
 ---
-title: "Update a campaign"
-api: "PUT https://api.useplunk.com/v1/campaigns"
+title: "Chỉnh sửa chiến dịch"
+api: "PUT https://api.mailsparky.com/v1/campaigns"
 description: "Update an existing campaign"
 ---
 
@@ -11,7 +11,7 @@ description: "Update an existing campaign"
 <ParamField body="subject" placeholder="new-project" type="string" required>
     The subject of the campaign
 </ParamField>
-<ParamField body="body" placeholder="hello@useplunk.com" type="string" required>
+<ParamField body="body" placeholder="hello@mailsparky.com" type="string" required>
     The body of the campaign
 </ParamField>
 <ParamField body="recipients" type="string[]" required>
@@ -32,7 +32,7 @@ description: "Update an existing campaign"
 {
   "id": "45fb8871-c028-414e-a351-ce7fafaf00f1",
   "subject": "My new campaign!",
-  "body": "This is my Plunk campaign.",
+  "body": "This is my MailSparky campaign.",
   "status": "DRAFT",
   "delivered": null,
   "style": "PLUNK",

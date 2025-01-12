@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Plunk",
+  "name": "MailSparky",
   "logo": {
     "dark": "/logo/plunk-dark.svg",
     "light": "/logo/plunk-light.svg"
