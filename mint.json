@@ -81,7 +81,15 @@
         "api-reference/transactional/send"
       ]
     },
-     {
+    {
+      "group": "Events",
+      "pages": [
+        "api-reference/events/create",
+        "api-reference/events/trigger",
+        "api-reference/events/delete"
+      ]
+    },
+    {
       "group": "Campaigns",
         "pages": [
             "api-reference/campaigns/create",

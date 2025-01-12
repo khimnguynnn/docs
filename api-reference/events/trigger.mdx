@@ -1,0 +1,23 @@
+---
+title: "Kích hoạt Events"
+api: "POST https://api.mailsparky.com/v1"
+---
+
+### Body
+<ParamField body="event" placeholder="event-name" type="string" required>
+    The subject of the event
+</ParamField>
+<ParamField body="email" placeholder="hello@mailsparky.com" type="string" required>
+    Your email address
+</ParamField>
+<ParamField body="subscribed" type="bool">
+    true or false
+</ParamField>
+
+### Reponse
+
+<ResponseExample>
+```json Response
+{"success": true, "contact": "aae1aa1a-49b9-4d47-a817-74dcfcc7bb37", "event": "30a77888-d26d-4419-92f7-ad720bd5b3c0", "timestamp": "2025-01-12T16:45:35.835Z"}
+```
+</ResponseExample>

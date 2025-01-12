@@ -1,0 +1,17 @@
+---
+title: "Xóa Events"
+api: "DELETE https://api.mailsparky.com/v1/events"
+---
+
+### Body
+<ParamField body="id" placeholder="event-id" type="string" required>
+    The id of the event
+</ParamField>
+
+### Reponse
+
+<ResponseExample>
+```json Response
+{"id": "6aa0c01a-2128-40e3-b556-0d020d2955f9", "name": "test-events", "projectId": "8c7e857d-2468-48c2-bfb3-c6d139403c62", "templateId": null, "campaignId": null, "createdAt": "2025-01-12T16:54:25.331Z", "updatedAt": "2025-01-12T16:54:25.331Z"}
+```
+</ResponseExample>
