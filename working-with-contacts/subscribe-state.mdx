@@ -1,12 +1,12 @@
 ---
 title: 'Subscriptions'
-description: 'Updating the subscription status of a contact'
+description: Cập nhật trạng thái đăng ký của một liên hệ
 icon: 'user-check'
 ---
 
-Contacts in Plunk are either subscribed or unsubscribed.
+Danh bạ có thể đã đăng ký hoặc đã hủy đăng ký.
 
-Depending on the status of a contact, they will receive or not receive emails from Plunk.
+Tùy thuộc vào trạng thái của liên hệ, họ sẽ nhận được hoặc không nhận được email từ MailSparky.
 
 |                                      | Subscribed | Unsubscribed |
 |--------------------------------------|------------|--------------|
@@ -15,22 +15,19 @@ Depending on the status of a contact, they will receive or not receive emails fr
 | Transactional emails                 | ✔️         | ✔️           |
 | Campaigns                            | ✔️         | ✖️           |
 
-## Updating the subscription status of a contact
-Giving contacts the ability to update their subscription status for marketing emails is a requirement in many countries, and is considered a best practice in others.
+## Cập nhật trạng thái đăng ký của một liên hệ
+Việc cung cấp cho liên hệ khả năng cập nhật trạng thái đăng ký nhận email tiếp thị là yêu cầu bắt buộc ở nhiều quốc gia và được coi là thông lệ tốt nhất ở những quốc gia khác.
 
-There are two ways to update the subscription status of a contact.
-
-### Using Plunk-hosted pages
-Each contact in Plunk has a set of three pages that can be used to update their subscription status.
+Có hai cách để cập nhật trạng thái đăng ký của một liên hệ.
 
 <Tip>
-    The URLs below are ready to use. Plunk will automatically fill in the ID for both actions and transactional emails.
+    Các URL bên dưới đã sẵn sàng để sử dụng. Plunk sẽ tự động điền ID cho cả hành động và email giao dịch.
 </Tip>
 
-- `https://app.useplunk.com/manage/{{plunk_id}}`, allows a contact to subscribe or unsubscribe depending on their current status.
-- `https://app.useplunk.com/unsubscribe/{{plunk_id}}`, allows a contact to unsubscribe.
-- `https://app.useplunk.com/subscribe/{{plunk_id}}`, allows a contact to subscribe.
+- `https://app.mailsparky.com/manage/{{id}}`, cho phép liên hệ đăng ký hoặc hủy đăng ký tùy thuộc vào trạng thái hiện tại của họ.
+- `https://app.mailsparky.com/unsubscribe/{{id}}`, cho phép liên hệ hủy đăng ký.
+- `https://app.mailsparky.com/subscribe/{{id}}`, cho phép liên hệ đăng ký.
 
-### Using the Plunk API
-With the ID of the contact, you can either [subscribe](/api-reference/contacts/subscribe) or [unsubscribe](/api-reference/contacts/unsubscribe) them.
+### Sử dụng API
+Với ID của liên hệ, bạn có thể [subscribe](/api-reference/contacts/subscribe) hoặc [unsubscribe](/api-reference/contacts/unsubscribe) họ.
 

@@ -1,14 +1,13 @@
 ---
-title: 'Importing Contacts'
-description: 'Learn how to import your contacts into Plunk'
+title: 'Nhập danh bạ'
+description: 'Tìm hiểu các nhập danh bạ.'
 icon: 'file-import'
 ---
 
-Plunk does not provide a way to import contacts directly from a file. However, you can use the [Plunk API](/api-reference/contacts/create) to create contacts programmatically.
+Hiện tại chúng tôi không cung cấp nhập danh bạ trực tiếp từ file. Tuy nhiên, bạn có thể sử dụng [API](/api-reference/contacts/create) để import hàng loạt liên hệ.
 
 ## Importing contacts with Python
-If you have a list of contacts in a CSV file and are comfortable with Python, you can use the following script to import them into Plunk.
-
+Nếu bạn có danh sách liên lạc trong tệp CSV và biết dùng Python, bạn có thể sử dụng tập lệnh sau để nhập danh sách.
 ```python
 import csv
 import requests
@@ -29,7 +28,7 @@ with open(FILE_NAME, 'r', errors='ignore') as csv_file:
         success = False
         while retries > 0 and not success:
             try:
-                response = requests.post('https://api.useplunk.com/v1/contacts', json={
+                response = requests.post('https://api.mailsparky.com/v1/contacts', json={
                     'email': line[EMAIL_INDEX].strip(),
                     'subscribed': True,
                 }, headers={
@@ -48,6 +47,6 @@ with open(FILE_NAME, 'r', errors='ignore') as csv_file:
 ```
 
 ## Get help from Plunk
-If you need help importing your contacts, feel free to reach out to us at [support@useplunk.com](support@useplunk.com).
+Nếu bạn cần hỗ trợ, hãy liên hệ chúng tôi theo email này [support@mailsparky.com](support@mailsparky.com).
 
-Send us your CSV file and public key, and we'll help you import your contacts into Plunk.
+Gửi cho chúng tôi file CSV  and public key, Chúng tôi sẽ giúp bạn import danh bạ.

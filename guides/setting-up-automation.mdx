@@ -1,17 +1,17 @@
 ---
-title: 'Setting up an automation'
-description: 'Learn how to set up an automated email flow with Plunk'
+title: 'Thiết lập tự động hóa'
+description: 'Tìm hiểu cách thiết lập luồng email tự động'
 icon: 'wand-sparkles'
 ---
 
-Automations are the bread and butter of Plunk. They allow you to set up a flow of emails that are sent to your users based on their actions. You might want to send a welcome email to new users and ask them for feedback a couple of days later.
+Chúng cho phép bạn thiết lập luồng email được gửi đến người dùng dựa trên hành động của họ. Bạn có thể muốn gửi email chào mừng đến người dùng mới và yêu cầu họ phản hồi sau vài ngày.
 
 ## Tracking events
-Events are the actions that your users take on your website or app. You track events by calling the [Plunk API](/api-reference/actions/track).
+Sự kiện (Events) là những hành động mà người dùng thực hiện trên trang web hoặc ứng dụng của bạn. Bạn theo dõi các sự kiện bằng cách gọi [API](/api-reference/actions/track).
 
-An example of an event is `new-project`, which you might want to track when a user creates a new project. You would send it to Plunk like this:
+Một ví dụ về sự kiện `new-project`, mà bạn có thể muốn theo dõi khi người dùng tạo một dự án mới. Bạn sẽ gọi API như thế này:
 ```javascript
-await fetch('https://api.useplunk.com/v1/track', {
+await fetch('https://api.mailsparky.com/v1/track', {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
@@ -19,23 +19,23 @@ await fetch('https://api.useplunk.com/v1/track', {
     },
     body: JSON.stringify({
         "event": "new-project",
-        "email": "hello@useplunk.com"
+        "email": "hello@mailsparky.com"
     })
 });
 ```
 
-Events will automatically show up in the Plunk dashboard, as well as newly created contacts.
+Các sự kiện sẽ tự động hiển thị trên bảng điều khiển, cũng như các liên hệ mới được tạo.
 
-## Creating a template
-Templates are the blueprints for your emails. They allow you to create a design that you can edit and reuse. Plunk's template editor makes it easy to create beautiful emails that look great on all devices.
+## Tạo một bản mẫu (Template)
+Template là bản thiết kế cho email của bạn. Chúng cho phép bạn tạo một thiết kế mà bạn có thể chỉnh sửa và sử dụng lại. Trình chỉnh sửa mẫu của chúng tôi giúp bạn dễ dàng tạo các email đẹp mắt, trông tuyệt vời trên mọi thiết bị.
 
 <Frame>
-![Plunk email editor](/images/editor.png)
+![Text Editor](/images/edt.png)
 </Frame>
 
-## Setting up an action
-Once you have an event and action on hand, you can bring them together in an action. Actions allow you to configure what events trigger which emails. You can also set up delays and conditions to make sure that your emails are sent at the right time.
+## Thiết lập Action
+Sau khi có sẵn một Event, Template và Action, bạn có thể kết hợp chúng lại với nhau trong một Action. Action cho phép bạn cấu hình Event nào sẽ kích hoạt email nào. Bạn cũng có thể thiết lập độ trễ và điều kiện để đảm bảo rằng email của bạn được gửi vào đúng thời điểm.
 
 <Frame>
-    ![Plunk action editor](/images/action.png)
+    ![action editor](/images/act.png)
 </Frame>

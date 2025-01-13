@@ -1,20 +1,20 @@
 ---
 title: 'Metadata'
-description: 'Attach metadata to your contacts and use it'
+description: 'Gán metadata vào các liên hệ của bạn'
 icon: 'database'
 ---
 
-You will often want to attach metadata to your contacts. For example, you might want to store their name, address, or the name of their company.
+Bạn sẽ muốn đính kèm metadata vào danh bạ của mình. Ví dụ, bạn có thể muốn lưu trữ tên, địa chỉ hoặc tên công ty của họ.
 
-When [tracking events](/api-reference/actions/track), you can attach metadata to the contact. This metadata will be available to view in the dashboard, can be used to [segment contacts](/working-with-contacts/segmentation), and can be used to [personalize messages](/api-reference/actions/personalize).
+Khi [tracking events](/api-reference/actions/track), bạn có thể thêm metadata vào liên hệ. Metadata có thể được xem trong bảng điều khiển, được dùng cho [segment contacts](/working-with-contacts/segmentation), và [personalize messages](/api-reference/actions/personalize).
 
-## Adding metadata
-In this example, we will track the event `project-created` and attach the name of the project to the contact.
+## Thêm metadata
+Trong ví dụ này, chúng tôi sẽ theo dõi sự kiện `project-created` và đính kèm tên dự án vào liên hệ.
 
-<Warning>Metadata keys are case-sensitive!</Warning>
+<Warning>Metadata sẽ phân biệt chữ hoa chữ thường!</Warning>
 
 ```javascript
-await fetch('https://api.useplunk.com/v1/track', {
+await fetch('https://api.mailsparky.com/v1/track', {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
@@ -22,61 +22,53 @@ await fetch('https://api.useplunk.com/v1/track', {
     },
     body: JSON.stringify({
         "event": "new-project",
-        "email": "hello@useplunk.com",
+        "email": "hello@mailsparky.com",
         "data": {
-            "project": "Plunk"
+            "project": "MailSparky"
         }
     })
 });
 ```
 
-The project key will be added to the contact and will be available to use in the dashboard. Keys that do not exist will be created, and keys that do exist will be updated.
+key project sẽ được thêm vào trong liên hệ và sẽ được dùng ở bảng điều khiển. Key không tồn tại sẽ được tạo, and Key đã tồn tại sẽ được chỉnh sửa.
 
-## Using metadata in templates
-You will often want to use metadata in your templates. Personalizing your messages is a great way to increase engagement and conversion rates.
+## Sử dụng metadata trong templates
+Khi bạn tạo template, bạn có thể sử dụng cú pháp `{{data}}` để truy cập metadata. Ví dụ, nếu bạn muốn sử dụng tên của dự án trong mẫu của mình, bạn có thể sử dụng `{{project}}`.
 
-When you are creating a new template, you can use the `{{data}}` syntax to access the metadata. For example, if you wanted to use the name of the project in your template, you could use `{{project}}`.
-
-## Using metadata in transactional emails
-You can also use metadata in your [transactional emails](/api-reference/transactional). Use the `{{data}}` syntax to access the metadata. For example, if you wanted to use the name of the project in your email, you could use `{{project}}`.
+## Sử dụng metadata trong transactional emails
+Bạn cũng có thể sử dụng metadata trong [transactional emails](/api-reference/transactional). Sử dụng cú pháp `{{data}}` để truy cập metadata. Ví dụ, nếu bạn muốn sử dụng tên dự án trong email của mình, bạn có thể sử dụng `{{project}}`.
 
 ```javascript
-await fetch('https://api.useplunk.com/v1/send', {
+await fetch('https://api.mailsparky.com/v1/send', {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
         "Authorization": "Bearer <API_KEY>"
     },
     body: JSON.stringify({
-        "to": "hello@useplunk.com",
+        "to": "hello@mailsparky.com",
         "subject": "Welcome {{project}}",
-        "body": "Welcome to Plunk, {{project}}!"
+        "body": "Welcome to MailSparky, {{project}}!"
     })
 });
 ```
 
-## Default values
-You can also set default values for metadata keys. If a key does not exist on a contact, the default value will be used instead.
+## Giá trị mặc định
+Bạn cũng có thể đặt giá trị mặc định cho metadata. Nếu khóa không tồn tại trên một liên hệ, giá trị mặc định sẽ được sử dụng thay thế.
 
-Extend the template with a default value using `??`
+Mở rộng templates với một giá trị mặc định ta sẽ sử dụng `??`
 
 ```
-{{project ?? Plunk}}
+{{project ?? MailSparky}}
 ```
-
-## Reserved keys
-There are a few reserved keys that you cannot use as metadata keys. Plunk will ignore these keys and automatically set them for you.
-
-- `plunk_id`: The ID of the contact.
-- `plunk_email`: The email of the contact.
 
 ## Non-persistent metadata
 By default, metadata is persistent. This means that if you track an event and attach metadata, that data will be stored on the contact and will be available to use in the future.
 
-This is not always desirable. For example, if you want to send a one-time password or expiring URL. In that case, you need to explicitly set the metadata to be non-persistent.
+Ví dụ, nếu bạn muốn gửi mật khẩu một lần hoặc URL hết hạn. Trong trường hợp đó, bạn cần phải thiết lập rõ ràng metadata là không cố định.
 
 ```javascript
-await fetch('https://api.useplunk.com/v1/track', {
+await fetch('https://api.mailsparky.com/v1/track', {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
@@ -84,9 +76,9 @@ await fetch('https://api.useplunk.com/v1/track', {
     },
     body: JSON.stringify({
         "event": "new-project",
-        "email": "hello@useplunk.com",
+        "email": "hello@mailsparky.com",
         "data": {
-            "project": "Plunk",
+            "project": "MailSparky",
             "one-time-password": {
                 "value": "123456",
                 "persistent": false

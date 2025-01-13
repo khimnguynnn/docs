@@ -1,33 +1,34 @@
 ---
-title: 'Send a transactional email'
-description: 'Learn how to send your first transactional email with Plunk'
+title: 'Gửi một email sự kiện'
+description: 'Tìm hiểu các gửi email sự kiện đầu tiên (transactional).'
 icon: 'envelope'
 ---
 
-Transactional emails are most often a one-to-one communication between your application and your users. They are triggered by a user action, such as a password reset or a purchase confirmation.
 
-## Prerequisites
-- A Plunk account
-- A secret key from the Plunk dashboard
+Transactional email là hình thức giao tiếp một-một giữa ứng dụng của bạn và người dùng. Chúng được kích hoạt bởi một hành động của người dùng, chẳng hạn như việc đặt lại mật khẩu hoặc xác nhận đơn hàng.
 
-## Sending an email
-Sending a transactional email only requires a single API call with 3 parameters: `to`, `subject`, and `body`.
+## Yêu cầu
+- Tài khoản MailSparky
+- API secret key
 
-- `to`: A single email address or an array of email addresses.
-- `subject`: The subject of the email.
-- `body`: The body of the email. This can be plain text or HTML.
+## Gửi một email
+Gửi transactional email chỉ cần một lệnh gọi API duy nhất với 3 tham số: `to`, `subject` và `body`.
+
+- `to`: 1 địa chỉ email cụ thể hoặc 1 mảng gồm nhiều địa chỉ email.
+- `subject`: Chủ đề của email.
+- `body`: Nội dung của email. Đây có thể là văn bản thuần túy hoặc HTML.
 
 ```javascript
-await fetch('https://api.useplunk.com/v1/send', {
+await fetch('https://api.mailsparky.com/v1/send', {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
         "Authorization": "Bearer <API_KEY>"
     },
     body: JSON.stringify({
-        "to": "hello@useplunk.com",
+        "to": "hello@mailsparky.com",
         "subject": "Hello world!",
-        "body": "Your first email with Plunk"
+        "body": "Your first email!"
     })
 });
 ```

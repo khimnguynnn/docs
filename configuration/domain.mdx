@@ -1,30 +1,30 @@
 ---
-title: 'Custom domain'
-description: 'Adding & verifying a custom domain'
+title: 'Tên miền tùy chọn'
+description: 'Thêm và xác minh tên miền của bạn.'
 icon: 'globe'
 ---
 
-Sending emails from your own domain is a great way to build trust with your customers.
+Gửi email từ tên miền của bạn là một cách tuyệt vời để xây dựng lòng tin với khách hàng.
 
-## Verifying your domain
-When verifying your domain with Plunk, you choose a default sending address for your account. This is the address that we will use to send emails from your domain.
+## Xác minh domain của bạn
+Khi xác minh tên miền của bạn với MailSparky, bạn chọn một địa chỉ gửi mặc định cho tài khoản của mình. Đây là địa chỉ mà chúng tôi sẽ sử dụng để gửi email từ tên miền của bạn.
 
-To verify your domain, you need to add 2 TXT and 3 CNAME records to your domain. You can find these records in the [project settings](https://app.useplunk.com/settings/identity).
+Để xác minh tên miền, bạn cần thêm 2 records TXT và 3 records CNAME vào tên miền của bạn. Bạn có thể tìm được nó ở [project settings](https://app.mailsparky.com/settings/identity).
 
-By adding these records, you are giving Plunk permission to send emails from your domain, you can revoke this permission at any time by removing the records.
+Bằng các thêm records, bạn đã cấp quyền cho chúng tôi gửi email từ domain của bạn, bạn có thể thu hồi quyền này bất kỳ lúc nào bằng cách xóa các bản ghi.
 
-Plunk uses the industry standard [DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail) and [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework) protocols to send emails from your domain. These protocols are used by email providers to verify that emails are sent from the correct domain.
+MailSparky sử dụng industry standard [DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail) và [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework) protocols để gửi email từ domain của bạn. Các giao thức này được nhà cung cấp email sử dụng để xác minh rằng email được gửi từ đúng tên miền.
 
 ## DMARC
-DMARC is a way to configure what happens to emails when they fail SPF or DKIM checks. We recommend setting your DMARC policy to `quarantine` or `reject` to prevent spoofing of your domain.
+DMARC là một cách để cấu hình những gì xảy ra với email khi chúng không vượt qua được kiểm tra SPF hoặc DKIM. Chúng tôi khuyên bạn nên đặt chính sách DMARC của mình thành `quarantine` hoặc `reject` để ngăn chặn việc giả mạo tên miền của bạn.
 
-- `quarantine` - Emails that fail SPF or DKIM checks will be sent to the spam folder.
-- `reject` - Emails that fail SPF or DKIM checks will be rejected.
+- `quarantine` - Email không vượt qua được kiểm tra SPF hoặc DKIM sẽ được chuyển vào thư mục thư rác.
+- `reject` - Email không vượt qua được kiểm tra SPF hoặc DKIM sẽ bị từ chối.
 
-You can add a DMARC policy to your domain by adding a TXT record with the name `_dmarc` and the value `v=DMARC1; p=reject;`.
+Bạn có thể thêm chính sách DMARC vào miền của mình bằng cách thêm bản ghi TXT có tên `_dmarc` và giá trị `v=DMARC1; p=reject;`.
 
 | Type | Name | Value |
 | ---- | ----- | -----|
 | `TXT` | `_dmarc` | `v=DMARC1; p=reject;` |
 
-This example record will tell email providers to reject any emails that fail SPF or DKIM checks.
+record này sẽ yêu cầu nhà cung cấp email từ chối bất kỳ email nào không vượt qua được kiểm tra SPF hoặc DKIM.
