@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "MailSparky",
   "logo": {
-    "dark": "/logo/plunk-dark.svg",
-    "light": "/logo/plunk-light.svg"
+    "dark": "/logo/sparky-dark.svg",
+    "light": "/logo/sparky-light.svg"
   },
   "favicon": "/favicon.png",
   "colors": {
