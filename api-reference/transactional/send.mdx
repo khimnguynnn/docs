@@ -29,6 +29,9 @@ description: "Gửi email sự kiện (transactional) chỉ bằng lệnh gọi 
 <ParamField body="headers" type="object">
     Additional headers to include in the email.
 </ParamField>
+<ParamField body="style" placeholder="default" type="string" default={"default"}>
+    There are 2 types of style: default or HTML. If you do not fill in style. The system will recognize it as default
+</ParamField>
 
 ### Headers
 <ParamField header="Content-Type" type="string" required>
